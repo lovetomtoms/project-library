@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.new-book {
+    margin: 20px 0 20px 5%;
+    padding: 15px 20px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 1.0rem;
+    font-weight: bold;
+    box-shadow: 0 0 10px gray;
+    cursor: pointer;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: lightyellow;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    /* height: 100px; */
+    transform: translate(-50%, -50%);
+    background-color: orange;
+    padding: 20px;
+    border-radius: 10px;
+    /* display: grid; */
+    /* gap: 10px; */
+    /* box-shadow: 0 0 20px gray; */
+    display: none;
+}
+
+.form-container .heading {
+    /* position: relative; */
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.form-container h1 {
+    margin-right: auto;
+}
+
+.form-container input {
+    font-size: 1.5rem;
+    outline: none;
+    border-style: none;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.form-container label {
+    font-size: 1.5rem;
+    padding-left: 5px;
+}
+
+.form-container .add {
+    width: 150px;
+    padding: 15px 0;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 1.0rem;
+    font-weight: bold;
+    box-shadow: 0 0 20px gray;
+    cursor: pointer;
+}
+
+.form-container .escape-add {
+    font-size: 2rem;
+    color: red;
+    cursor: pointer;
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+}
+
+.book-container {
+    font-size: 1.5rem;
+    background-color: blanchedalmond;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px lightgray;
+    border-left: 9px solid red;
+}
+
+.remove {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background-color: gray;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-bottom: 20px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 0;
+    display: none;
+}
+
+.container input {
+    margin-right: 10px;
+    margin-top: 30px;
+    height: 20px;
+    width: 20px;
+}

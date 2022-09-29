@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta class="inputviewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="new-book">ADD NEW BOOK</button>
+    <div class="container"></div>
+    <div class="overlay"></div>
+    <div class="form-container">
+        <div class="heading">
+            <h1>Write down about your book!</h1>
+            <div class="escape-add">&#10005</div>
+        </div>
+        <form action="#">
+            <label for="title">Title</label>
+            <input type="text" class="input" id="title" placeholder="Enter title (ex. The Hobbit)" required>
+            <label for="author">Author</label>
+            <input type="text" class="input" id="author" placeholder="Enter author (ex. J.R.R. Tolkien)" required>
+            <label for="pages">Pages</label>
+            <input type="number" class="input" id="pages" placeholder="Enter pages (ex. 295)" required>
+            <button type="submit"class="add">ADD BOOK</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
