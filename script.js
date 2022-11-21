@@ -1,11 +1,40 @@
 let myLibrary = [];
-let empty = false;
+// let empty = false;
 const container = document.querySelector('.container');
 const inputs = document.querySelectorAll('input');
 const addNewBook = document.querySelector('.new-book');
 const addBook = document.querySelector('.add');
 const form = document.querySelector('.form-container');
 const overlay = document.querySelector('.overlay');
+
+// Another DOM cachefor inputs
+const formInput = document.querySelector('form')
+const inputTitle = document.querySelector('input:nth-of-type(1)')
+const inputAuthor = document.querySelector('input:nth-of-type(2)')
+const inputPages = document.querySelector('input:nth-of-type(3)')
+
+// Another addEventListener for inputs
+inputTitle.addEventListener('input', () => {
+    inputTitle.setCustomValidity('')
+})
+inputTitle.addEventListener('invalid', () => {
+    inputTitle.setCustomValidity('Please enter the title of the book')
+})
+
+inputAuthor.addEventListener('input', () => {
+    inputAuthor.setCustomValidity('')
+})
+inputAuthor.addEventListener('invalid', () => {
+    inputAuthor.setCustomValidity('Please enter the author of the book')
+})
+
+inputPages.addEventListener('input', () => {
+    inputPages.setCustomValidity('')
+})
+inputPages.addEventListener('invalid', () => {
+    inputPages.setCustomValidity('Please enter the number of pages of the book')
+})
+
 addNewBook.addEventListener('click', displayForm);
 addBook.addEventListener('click', addBookToLibrary);
 
@@ -30,16 +59,16 @@ function displayForm() {
     overlay.style.display = 'block';
 }
 
-function areInputsEmpty() {
-    inputs.forEach(input => {
-        if(input.value === '') {
-            empty = true;
-            return;
-        } else {
-            empty = false;
-        }
-    });
-}
+// function areInputsEmpty() {
+//     inputs.forEach(input => {
+//         if(input.value === '') {
+//             empty = true;
+//             return;
+//         } else {
+//             empty = false;
+//         }
+//     });
+// }
 
 function displayBook() {
     const bookContainers = container.children;
@@ -97,17 +126,21 @@ function removeBook(e){
 }
 
 function addBookToLibrary() {
-    areInputsEmpty();
-    if(!empty) {
-        const x = document.querySelector('input:nth-of-type(1)').value;
-        const y = document.querySelector('input:nth-of-type(2)').value;
-        const z = document.querySelector('input:nth-of-type(3)').value;
-        myLibrary.push(new Book(x, y, z));
-        form.style.display = 'none';
-        overlay.style.display = 'none';
-    }
+    // areInputsEmpty();
+    const inputsHaveValue = Array.from(inputs).every(input => input.value !== '')
+    console.log(inputsHaveValue)
+    if(!inputsHaveValue) return
+    const x = inputTitle.value;
+    const y = inputAuthor.value;
+    const z = inputPages.value;
+    myLibrary.push(new Book(x, y, z));
+    form.style.display = 'none';
+    overlay.style.display = 'none';
     displayBook();
+    // if(inputsHaveValue) {
     inputs.forEach(input => input.value = '');
+    // }
+    // inputs.forEach(input => input.value = '');
 }
 
 // const addBook = document.querySelector('.add');
